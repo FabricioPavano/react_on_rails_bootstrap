@@ -34,6 +34,7 @@ gem 'jbuilder', '~> 2.5'
 # gem 'capistrano-rails', group: :development
 
 gem 'react_on_rails', "8.0.0"
+gem 'jquery-rails'
 gem 'devise'
 
 group :development, :test do

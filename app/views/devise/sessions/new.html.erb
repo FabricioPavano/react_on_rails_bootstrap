@@ -1,7 +1,10 @@
+<% props = {
+  id: resource.id,
+  email: resource.email,
+  authenticity_token: form_authenticity_token
+} %>
 
-<%= react_component("SignIn", props: resource, prerender: false) %>
-
-<h2>Log in</h2>
+<%= react_component("SignIn", props: props, prerender: false) %>
 
 <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
   <div class="field">
@@ -25,5 +28,3 @@
     <%= f.submit "Log in" %>
   </div>
 <% end %>
-
-<%= render "devise/shared/links" %>
