@@ -1,4 +1,3 @@
-import { combineReducers } from 'redux';
 import { APP_NAME_UPDATE } from '../constants/appConstants';
 
 const name = (state = '', action) => {
@@ -10,6 +9,4 @@ const name = (state = '', action) => {
   }
 };
 
-const appReducer = combineReducers({ name });
-
-export default appReducer;
+export default name;
