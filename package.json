@@ -1,0 +1,9 @@
+{
+  "scripts": {
+    "postinstall": "cd client && yarn install"
+  },
+
+  "name": "tickets-rails-react",
+  "private": true,
+  "dependencies": {}
+}
