@@ -1,0 +1,10 @@
+<% props = {
+  id: resource.id,
+  email: resource.email,
+  userType: 'admin',
+  csrfToken: csrf_token
+} %>
+
+<%= react_component("SignIn", props: props, prerender: false) %>
+
+

@@ -15,6 +15,7 @@ class SignIn extends Component {
     super(props);
 
     this.state = {
+      userType: this.props.userType,
       email: this.props.email || '',
       password: this.props.password || '',
       csrfToken: this.props.csrfToken
@@ -41,12 +42,12 @@ class SignIn extends Component {
     return (
       <div className="Login">
         <Col xs={6} xsOffset={3} >
-	        <form onSubmit={this.handleSubmit} action="/users/sign_in" method="post"  >
+	        <form onSubmit={this.handleSubmit} action={ "/" + this.state.userType + "s/sign_in"} method="post"  >
 	          <FormGroup controlId="email" bsSize="large">
 	            <ControlLabel>Email</ControlLabel>
 	            <FormControl
 	              autoFocus
-                name="user[email]"
+                name={ this.state.userType + "[email]"}
 	              type="email"
 	              value={this.state.email}
 	              onChange={this.handleChange} />
@@ -54,7 +55,7 @@ class SignIn extends Component {
 	          <FormGroup controlId="password" bsSize="large">
 	            <ControlLabel>Password</ControlLabel>
 	            <FormControl
-                name="user[password]"
+                name={ this.state.userType + "[password]"}
 	              value={this.state.password}
 	              type="password" 
                 onChange={this.handleChange} />
