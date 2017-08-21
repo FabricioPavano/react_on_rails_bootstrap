@@ -35,6 +35,7 @@ gem 'jbuilder', '~> 2.5'
 
 gem 'react_on_rails', "8.0.0"
 gem 'jquery-rails'
+gem 'twitter-bootstrap-rails'
 gem 'devise'
 
 group :development, :test do

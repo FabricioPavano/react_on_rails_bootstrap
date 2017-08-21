@@ -17,8 +17,9 @@ class SignIn extends Component {
     this.state = {
       email: this.props.email || '',
       password: this.props.password || '',
-      authenticity_token: this.props.authenticity_token
+      csrfToken: this.props.csrfToken
     };
+
   }
 
   validateForm() {
@@ -45,24 +46,20 @@ class SignIn extends Component {
 	            <ControlLabel>Email</ControlLabel>
 	            <FormControl
 	              autoFocus
+                name="user[email]"
 	              type="email"
 	              value={this.state.email}
-                name="email"
 	              onChange={this.handleChange} />
 	          </FormGroup>
 	          <FormGroup controlId="password" bsSize="large">
 	            <ControlLabel>Password</ControlLabel>
 	            <FormControl
-                name="password"
+                name="user[password]"
 	              value={this.state.password}
-	              onChange={this.handleChange}
-	              type="password" />
+	              type="password" 
+                onChange={this.handleChange} />
 	          </FormGroup>
-            <FormControl 
-                name="authenticity_token"
-                type="hidden"
-                value={this.state.authenticity_token}
-             />
+            <input type="hidden" name="authenticity_token" value={this.state.csrfToken} /> 
 	          <Button
 	            block
 	            bsSize="large"
